@@ -7,11 +7,11 @@ const Calculator = () => {
 
   const display = (symbol) => {
     if (
-      currentDisplay[currentDisplay.length - 1] == "=" ||
-      symbol == "0" ||
-      symbol == "."
+      currentDisplay[currentDisplay.length - 1] === "=" ||
+      symbol === "0" ||
+      symbol === "."
     ) {
-      if (currentDisplay[currentDisplay.length - 1] == "=") {
+      if (currentDisplay[currentDisplay.length - 1] === "=") {
         if (/[1-9.]/.test(symbol)) {
           setCurrentDisplay(symbol);
           setanswer(0);
@@ -24,16 +24,16 @@ const Calculator = () => {
         }
       }
 
-      if (symbol == "0") {
-        if (currentDisplay == "0") {
+      if (symbol === "0") {
+        if (currentDisplay === "0") {
           setCurrentDisplay(currentDisplay);
         } else {
           setCurrentDisplay((prev) => prev + symbol);
         }
       }
 
-      if (symbol == ".") {
-        if (currentDisplay[currentDisplay.length - 1] == ".") {
+      if (symbol === ".") {
+        if (currentDisplay[currentDisplay.length - 1] === ".") {
           setCurrentDisplay(currentDisplay);
         } else {
           setCurrentDisplay((prev) => prev + symbol);
